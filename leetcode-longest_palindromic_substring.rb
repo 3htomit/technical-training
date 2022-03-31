@@ -1,10 +1,10 @@
 def longest_palindrome(s)
-  letters = s.split("")
   palindrome = ""
+  letters = s.chars
 
   letters.each_with_index { |l, i|
     n = 0
-    l_size = letters[i...(letters.size)].size
+    l_size = letters.size
 
     while l_size > 1
       l_range = letters[i...(letters.size - n)]
@@ -17,9 +17,9 @@ def longest_palindrome(s)
   }
 
   if palindrome.empty?
-    p palindrome = letters.first
+    return palindrome = s[0]
   else
-    p palindrome
+    return p palindrome
   end
 end
 
