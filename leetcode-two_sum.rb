@@ -1,26 +1,20 @@
 def two_sum(nums, target)
-  ## My solution
-  nums.each do |num|
+  nums.each_with_index do |num, i|
     n = 1
-    while n + 1 <= (nums.size - nums.index(num))
-      p "[#{nums.index(num)}, #{(nums.index(num) + n)}]" if (num + nums[nums.index(num) + n]) == target
+    while  n + 1 <= (nums.size - i)
+      if (num + nums[i + n]) == target
+        p [nums.index(num), (nums.index(num) + n)]
+      end
       n += 1
     end
   end
-
-  ## Best solution:
-  # for i in 0...(nums.size) do
-  #   for n in (i + 1)...(nums.size) do
-  #     p [i, n] if (nums[i] + nums[n]) == target
-  #   end
-  # end
 end
 
 
 # TESTING
 
 p "Testing A:"
-nums_a = [15, 7, 11, 2]
+nums_a = [2, 7, 11, 15]
 target_a = 9
 # Output: [0, 1]
 two_sum(nums_a, target_a)
