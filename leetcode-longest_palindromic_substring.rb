@@ -1,5 +1,5 @@
 def longest_palindrome(s)
-  palindrome = ""
+  palindrome = ''
   letters = s.chars
 
   letters.each_with_index { |l, i|
